@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esportes - Portfólio Pessoal</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #eff2e8, #6f8aec, #ffff);
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Cabeçalho */
+        header {
+            background: #fffefe;
+            color: #6f8aec;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Sombra na parte inferior */
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            font-family: scribble;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1rem;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        nav a:hover {
+            background-color: #6f8aec80;
+            transform: scale(1.05);
+        }
+
+        /* Conteúdo principal */
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px;
+            gap: 20px;
+        }
+
+        .content {
+            max-width: 50%;
+        }
+
+        .content h2 {
+            font-size: 3rem;
+            color: #000;
+            margin-bottom: 20px;
+            font-family: scribble;
+        }
+
+        .content hr {
+            border: none;
+            height: 5px;
+            background-color: #6f8aec;
+            margin: 20px 0;
+        }
+
+        .content p {
+            font-size: 1.20rem;
+            color: #ffffff;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-family: Times New Roman;
+        }
+
+        .content .buttons {
+            margin-top: 20px;
+        }
+
+        .content .btn {
+            display: inline-block;
+            padding: 8px 15px;
+            font-size: 1rem;
+            color: white;
+            background-color: #6f8aec;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-right: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .content .btn:hover {
+            background-color: #5a6ecf;
+        }
+
+        /* Imagem */
+        .image-container {
+            flex: 1;
+            text-align: center;
+        }
+
+        .image-container img {
+            width: 500px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Seção 1 */
+        #secao1 {
+            padding: 30px;
+        }
+
+        #secao1 h2, h3 {
+            font-size: 3.5rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-family: scribble;
+            text-justify: auto;
+        }
+
+        #secao1 p{
+            padding: 30;  
+        }
+
+        #secao1 h6{
+            font-size: 1.20rem;
+            color: #333;
+        margin-bottom: 70px; /* Adiciona espaço abaixo do parágrafo */
+        font-family: Times New Roman;
+        }
+
+
+
+        /* Seção 2 */
+
+#secao2 {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#secao2 h3 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: 600px;
+}
+
+#secao2 ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 0;
+    list-style: none;
+}
+
+#secao2 ul li {
+    background: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    font-size: 1rem;
+    text-align: left;
+}
+
+#secao2 ul li strong {
+    color: #34495e;
+    font-weight: 700px;
+}
+
+
+
+/* Seção 3 */
+#secao3 {
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: #ffffff;
+    text-align: center;
+}
+
+#secao3 h5 {
+    font-size: 1.5rem;
+    color: #ecf0f1;
+    margin-bottom: 15px;
+    font-weight: 250px;
+}
+
+
+
+    /* Lista de esportes com imagens */
+    .sports-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Divisão em duas colunas */
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .sports-item {
+        display: flex;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    width: 500px; /* Ajuste conforme necessário */
+    margin: 0 auto; /* Centraliza os itens se necessário */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Sombra na parte inferior */
+    }
+
+    .sports-item img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        margin-right: 15px;
+    }
+
+    .sports-item:hover {
+        transform: scale(1.30);
+    }
+
+    .sports-item strong {
+        font-size: 1.3rem;
+        color: #333;
+    }
+
+    .events-list {
+        text-align: center;
+        list-style-type: none;
+        padding: 20px;
+    }
+
+
+    .events-list li {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+
+    </style>
+
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Esportes</h1>
+        <nav>
+            <a href="Integrada IOT - Site.html" class="active">Home</a>
+        </nav>
+    </header>
+
+    <!-- Seção principal -->
+    <div class="container">
+        <!-- Texto e Botões -->
+        <div class="content">
+            <h2>Conecte-se com o Movimento</h2>
+            <hr>
+            <p>
+                O esporte sempre foi uma grande paixão, trazendo movimento e disciplina. A arte me
+                transborda de sensações, desde a liberdade, até a expressão da alma. Cada atividade fisica tem um papel 
+                especial na minha vida.
+            </p>
+            <div class="buttons">
+                <a href="#extra-secao" class="btn">Veja Mais</a>
+            </div>
+        </div>
+
+        <!-- Imagem -->
+        <div class="image-container">
+            <img src="image-removebg-preview (8).png" alt="Imagem de esportes">
+        </div>
+    </div>
+
+    <!-- Seção Adicional -->
+    <section id="secao1">
+        <h2>Minha Jornada nos Esportes</h2>
+        <h6>
+                O esporte vai além de um simples hobby, sendo uma verdadeira parte do meu estilo de vida. A natação, por exemplo, 
+            proporciona uma sensação única de liberdade e bem-estar, sendo um esporte completo que trabalha o corpo e a mente 
+            de forma equilibrada. Assim como a dança, que me acompanha desde sempre, transformando qualquer tipo de sentimento 
+            em arte.
+        </h6>
+
+
+        <div class="sports-list">
+            <div class="sports-item">
+                <img src="Natação 1 1. jpg”" alt="Ícone de Natação">
+                <div>
+                    <strong>Natação:</strong>
+                    <p>Treino semanal quando tinha 12 anos.</p>
+                </div>
+            </div>
+            <div class="sports-item">
+                <img src="Kids Jiu Jitsu _ Self Defense for Kids _ Ventura County Jiu Jitsu _ Thousand Oaks — Morumbi Jiu Jitsu and Fitness Academy.jpg" alt="Ícone de Jiu-Jitsu">
+                <div>
+                    <strong>Jiu-jitsu/Judô:</strong>
+                    <p>Foco em disciplina, técnica e autoconfiança - treino na escola aos 8 anos.</p>
+                </div>
+            </div>
+            <div class="sports-item">
+                <img src="Vem camará capoeira bateria.jpg" alt="Ícone de Capoeira">
+                <div>
+                    <strong>Capoeira:</strong>
+                    <p>Jogo coletivo que aprimora habilidades de trabalho em equipe - Oficina sétimo ano do fundametal.</p>
+                </div>
+            </div>
+            <div class="sports-item">
+                <img src="baixados.jpg" alt="Ícone de Futsal">
+                <div>
+                    <strong>Futsal:</strong>
+                    <p>Um bimestre de ofina de futsal feminino - Senac 2023.</p>
+                </div>
+            </div>
+            <div class="sports-item">
+                <img src="bale 1.jpg" alt="Ícone de Ballet Clássico">
+                <div>
+                    <strong>Ballet Clássico:</strong>
+                    <p>Faço desde de sempre - Minha mãe dançava grávida de mim.</p>
+                </div>
+            </div>
+            <div class="sports-item">
+                <img src="iot20.jpg" alt="Ícone de Jazz">
+                <div>
+                    <strong>Jazz:</strong>
+                    <p>Meu estilo favorito é o lirico e SALTO (sapato) - Faço desde os 11 anos de idade.</p>
+                </div>
+            </div>
+            <div class="sports-item">
+                <img src="iot19.jpg" alt="Ícone de Contemporâneo">
+                <div>
+                    <strong>Dança Contemporânea:</strong>
+                    <p>Um dos meus tipos de dança favorito - comecei em 2021.</p>
+                </div>
+            </div>
+            <div class="sports-item">
+                <img src="iot21.jpg" alt="Ícone de Urbanas">
+                <div>
+                    <strong>Danças Urbanas:</strong>
+                    <p>Gosto bastante, mas ainda não me sinto muito a vontade com esse estilo - 
+                    Fiz aulas presenciais e online (durante pandemia).</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+            <!-- Eventos -->
+            <section id="secao2">
+                <h3>Eventos Esportivos</h3>
+                <ul>
+                    <li>
+                        <strong>Festival de Dança Joinville:</strong> 2023 e 2024
+                    </li>
+                    <li>
+                        <strong>Apresentação de Dança Studio Nina Ballerina:</strong> 2017 - 2024
+                    </li>
+                    <li>
+                        <strong>Projeto Social:</strong> Dançar em uma escola pública infantil municipal - 2018
+                    </li>
+                    <li>
+                        <strong>Show de Talentos:</strong> Escola - 2019 / Igreja - 2023 e 2024
+                    </li>
+                </ul>
+            </section>
+
+            <section id="secao3">
+                <h5>Minha Jornada nos Esportes</h5>
+            </section>
+            
+
+    <!-- Script para rolagem suave -->
+    <script>
+        document.querySelector('.btn[href="#extra-secao"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#extra-secao').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
+
+
+

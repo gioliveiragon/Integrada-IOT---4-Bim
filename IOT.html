@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT - Internet das Coisas</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #eff2e8, #6f8aec, #ffff);
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Cabeçalho */
+        header {
+            background: #fffefe;
+            color: #6f8aec;
+            padding: 20px;
+            display: flex;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            justify-content: space-between;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Sombra na parte inferior */
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            font-family: 'Scribble', cursive;
+            align-items: left;
+            justify-content: left;
+        }
+        .nav{
+            background: #fffefe;
+            color: #6f8aec;
+            padding: 20px;
+            display: flex;
+            align-items: right;
+            justify-content: right;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropbtn {
+    background-color: #ffffffa7;
+    color: rgb(0, 0, 0);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none; /* Remove a linha de link */
+    display: inline-block; /* Garante comportamento como botão */
+}
+
+.dropbtn:hover {
+    background-color: #6f8aec80;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 8px 15px;
+}
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+    border-radius: 5px;
+  }
+ 
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .curio:hover .dropdown-content {
+    display: block;
+  }
+  
+
+  .dropdown:hover .dropbtn {
+    background-color: #6f8aec80;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 8px 15px;
+  }
+
+
+        /* Seção principal */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            gap: 20px;
+        }
+
+        .content {
+            max-width: 600px;
+        }
+
+        .content h2 {
+            font-size: 2rem;
+            color: #000;
+            margin-bottom: 20px;
+            font-family: 'Scribble', cursive;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .image-caption {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* Seção de Projetos IoT */
+        #secaoProjetos {
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        #secaoProjetos h3 {
+            font-size: 4rem;
+            color: #333;
+        
+            font-family: 'Scribble', cursive;
+        }
+        #secaoProjetos hr {
+            border: none;
+            height: 5px;
+            background-color: #6f8aec;
+            width: 50%;
+            margin: auto;
+ margin-bottom: 100px;
+        }
+
+        .projeto-container {
+            display: flex;
+            justify-content: space-around;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .projeto {
+            background-color: #ffffff;
+            width: 280px;
+            height: auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .projeto:hover {
+            transform: translateY(-10px);
+        }
+
+        .projeto img, video {
+            width: 100%;
+             border-radius: 8px;
+            max-height: 200px;
+            object-fit: cover;
+        }
+
+
+        .projeto h5 {
+            margin-top: 15px;
+            font-size: 1.5rem;
+            color: #333;
+            font-family: 'Scribble', cursive;
+        }
+
+        .projeto p {
+            font-size: 1rem;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        /* Seção de Carrossel */
+        .carousel-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .main-card {
+            background-color: #f0f0f0;
+            border-radius: 100%;
+            width: 600px;
+            height: 600px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: visible; /* Permite que a imagem ultrapasse a borda */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        .main-card .text-content {
+            padding: 20px;
+            padding-top: -800px;
+            color: #333;
+            text-align: left;
+        }
+
+        .main-card h5 {
+            margin-top: 0;
+            color: #a29bfe;
+            text-align: center;
+            font-family: 'Scribble', cursive;
+        }
+
+        .main-card p {
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+
+        .main-card img {
+            width: 300px;
+            height: 300px;
+            border-radius: 100%;
+            position: absolute;
+            bottom: -50px; /* Coloca a imagem para fora da borda do círculo */
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra para a imagem */
+            object-fit: cover;  /* Garante que a imagem se ajuste sem distorção */
+        }
+
+        .small-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            position: absolute;
+            bottom: -50px; /* Ajusta para que a imagem fique abaixo da borda do círculo */
+            left: 300%;
+            transform: translateX(-30%);
+            border: 2px solid white;
+            box-shadow: 0 10px 6px rgba(0, 0, 0, 0.736);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Internet das Coisas</h1>
+    <!-- Menu de Navegação -->
+    <nav>
+        <div class="dropdown">
+            <a href="Integrada IOT - Site.html" class="dropbtn">Home</a>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">Areas do Conhecimento</button><!-- a div dropbtn é somente do botão-->
+            <div class="dropdown-content"> <!-- a div dropdown-content é o texto-->
+              <a href="CN.html">CN</a>
+              <a href="CHS.html">CHS</a>
+              <a href="MAT.html">MAT</a>
+              <a href="LGG.html">LGG</a>
+              <a href="IOT.html">IOT</a>
+            </div>
+        </div>
+    </nav>
+
+    </header>
+
+    <!-- Seção principal -->
+    <div class="container">
+        <div class="content">
+            <h2>Transformando o Mundo com IoT</h2>
+            <p>
+                A Internet das Coisas (IoT) está moldando o futuro das tecnologias conectadas. Venha conhecer os projetos inovadores que estão ajudando a transformar a maneira como vivemos e trabalhamos.
+            </p>
+        </div>
+        <div class="image-container">
+            <img src="iot3.png" alt="IoT Image">
+        </div>
+    </div>
+
+    <!-- Seção de Projetos IoT -->
+    <section id="secaoProjetos">
+        <h3>Meus Projetos IoT</h3>
+        <hr>
+        <div class="projeto-container">
+            <div class="projeto">
+                <img src="iot.jpg" alt="Projeto 1">
+                <h5>Projeto Carrinho Arduino</h5>
+                <p>Um projeto completo de um carrinho seguidor de linha utilizando a plataforma Arduino. 
+                A atividade envolve a construção física do carrinho, a programação do microcontrolador 
+                Arduino para controlar os movimentos e sensores</p>
+            </div>
+            <div class="projeto">
+                <img src="Integrada IOT - 4Bim.png" alt="Projeto 2">
+                <h5>Projeto Arduino Automação</h5>
+                <p>Um projeto completo de um Sistema de irrigação automática e lixeira com abertura 
+                automática utilizando a plataforma Arduino. A atividade envolve a construção física dos dois 
+                projetos, a programação do microcontrolador Arduino para controlar os movimentos e sensores, 
+                e a documentação detalhada do processo em um relatório técnico</p>
+            </div>
+            <div class="projeto">
+                <img src="Integrada IOT1 - 4Bim.png" alt="Projeto 3">
+                <h5>Projeto Boné com Sensor de Ré</h5>
+                <p>Sistema inovador incorporado em um boné que funcione como um sensor de ré. Este sistema é capaz de detectar 
+                objetos próximos, emitir sinais sonoros e visuais de alerta, além de identificar a ausência de luz ambiente. Utilizado
+                a plataforma Arduino para implementar e integrar todos os componentes necessários.</p>
+                <img src="iot5.jpg" alt="Projeto 3">
+            </div>
+            <div class="projeto">
+                <video id="custom_video_play" width="400" controls="controls">>
+                    <source src="iot.video.mp4" type="video/mp4"><source src="mov_bbb.flv" type="video/flv"> Browser Not Supporting
+                    </video>
+                <h5>Projeto Publicidade IOT</h5>
+                <p>Vídeo que retrata as aulas do curso de IOT, demostrando a organização e disponibilidade dos Kits Arduino, 
+                o que aprendemos nas aulas do técnico e entrevistas com colegas e professores. </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Carrossel -->
+    <section class="carousel-container">
+        <div class="main-card">
+            <div class="text-content">
+                <h5>GGST</h5>
+                <p>
+                    A GGST é uma equipe de alunas do 3º ano do Ensino Médio Integrado, dedicados ao desenvolvimento de projetos IOT
+                </p>
+            </div>
+            <img src="iot1.jpg" alt="GGST">
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+

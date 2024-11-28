@@ -1,0 +1,327 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo Global */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #6f8aec;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+
+        /* Cabeçalho */
+        header {
+          background: #ffffffa7;
+          justify-items: center;
+          padding: 20px;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Sombra na parte inferior */
+      }
+
+.inicio-imagem{
+  color: #6f8aec;
+  padding: 20px;
+  display: flex;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  z-index: 10; /* Colocando o cabeçalho acima da imagem */
+  position: relative;
+}
+
+      header h1 {
+          font-size: 2.5rem;
+          margin: 0;
+          font-family: 'Scribble', cursive;
+          align-items: left;
+          justify-content: left;
+      }
+
+      /* Menu de Navegação */
+      .nav {
+          background-color: #333;
+          color: #6f8aec;
+          padding: 20px;
+          display: flex;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+          z-index: 20; /* Garante que o menu esteja sempre acima da imagem */
+          position: relative;
+      }
+
+      .dropdown {
+          position: relative;
+          display: inline-block;
+      }
+
+      .dropbtn {
+          background-color: #ffffffa7;
+          color: rgb(0, 0, 0);
+          padding: 16px;
+          font-size: 16px;
+          border: none;
+          cursor: pointer;
+          font-weight: bold;
+          border-radius: 5px;
+      }
+
+      .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #ffffff;
+          border-radius: 5px;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 2; /* Garante que o texto fique acima da sombra */
+      }
+
+      .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+      }
+
+      .dropdown-content a:hover {
+          background-color: #f1f1f1;
+          border-radius: 5px;
+      }
+
+      .dropdown:hover .dropdown-content {
+          display: block;
+      }
+
+      .dropdown:hover .dropbtn {
+          background-color: #6f8aec80;
+          border-radius: 5px;
+          font-size: 1rem;
+          padding: 8px 15px;
+      }
+
+      .curiosidades {
+          position: relative;
+          display: inline-block;
+          font-size: 12;
+      }
+
+      .curio {
+          background-color: #ffffffa7;
+          color: rgb(0, 0, 0);
+          padding: 16px;
+          font-size: 16px;
+          border: none;
+          cursor: pointer;
+          font-weight: bold;
+          border-radius: 5px;
+      }
+
+      .sidade-content {
+          display: none;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+          position: absolute;
+          border-radius: 5px;
+          z-index: 2; /* Garante que o texto fique acima da sombra */
+      }
+
+      .sidade-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          z-index: 1;
+      }
+
+      .sidade-content a:hover {
+          background-color: #f1f1f1;
+          border-radius: 5px;
+      }
+
+      .curiosidades:hover .sidade-content {
+          display: block;
+      }
+
+      .curiosidades:hover .curio {
+          background-color: #6f8aec80;
+          border-radius: 5px;
+          font-size: 1rem;
+          padding: 8px 15px;
+      }
+
+      /* Imagem de Início (Seção Principal) */
+      .inicio-imagem {
+          background: url('sua-imagem.jpg') no-repeat center center/cover;
+          height: 100vh; /* Altura total da tela */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          text-align: center;
+          position: relative;
+          z-index: 1; /* Garante que a imagem fique abaixo do cabeçalho e menu */
+      }
+
+      .inicio-imagem::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5); /* Escurecimento */
+          z-index: 0; /* Coloca o sombreado atrás do conteúdo */
+      }
+
+      .inicio-texto {
+          position: relative;
+          z-index: 2; /* Garante que o texto fique acima da sombra */
+      }
+
+      .inicio-texto h1 {
+          font-size: 3em;
+          margin: 0;
+          font-family: 'Scribble', cursive;
+      }
+
+      .inicio-texto p {
+          font-size: 1.2em;
+          margin-top: 10px;
+      }
+
+/* Estilo da Seção de Imagem de Início */
+.inicio-imagem {
+  background: url('fundosite.jpg') no-repeat center center/cover;
+  height: 100vh; /* Altura da seção igual à altura da tela */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.inicio-imagem::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Efeito de escurecimento */
+  z-index: 1;
+}
+
+.inicio-texto {
+  position: relative;
+  z-index: 2; /* Coloca o texto acima do escurecimento */
+}
+
+.inicio-texto h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+.inicio-texto p {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+
+
+/* Imagem de Parallax */
+.container {
+    width: 0vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    filter: brightness(50%);
+
+}
+
+.secao3 {
+  background-color: #6f8aec;
+    position: relative;
+    height: 10vh; /* Cobre a altura da tela */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    overflow: hidden;
+    width: 100vw; /* Cobre toda a largura da tela */
+}
+.secao3 h2{
+    font-family: 'Scribble', cursive;
+}
+
+.bg1::after{
+    content: "";
+    background-image: url('fundosite.jpg'); /* Adicione a imagem de fundo aqui */
+    opacity: 0.8;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Cobre 100% da largura da seção */
+    height: 50%; /* Cobre 100% da altura da seção */
+    z-index: -1;
+}
+
+
+/* Conteúdo Principal */
+.inicio {
+    color: #000;
+    padding: 80px;
+  }
+.inicio h1{
+  font-size: 2.7rem;
+  text-align: center;
+  font-family: Comic Sans MS, Comic Sans, cursive;
+  padding-top: 50px;
+}
+
+
+/* Galeria de Imagens */
+.galeria {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding: 50px;
+    padding-bottom: 250px;
+    transition: transform 0.7s ease;
+}
+
+.galeria img {
+    width: 350px;
+    height: 350px;
+    transition: transform 0.7s;
+    border-radius: 8px;
+    transform: translateY(-10px);
+}
+
+.galeria img:hover{
+  transform: scale(1.1, 1.10); /* hover = aumentar quando colocar o mouse em cima */
+}
+
+
+.galeria h5 {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 1.5rem;
+  color: #333;
+  font-family: 'Scribble', cursive;;
+}
+
+
+
+
+

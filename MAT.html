@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATEMÁTICA</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #eff2e8, #6f8aec, #ffff);
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Cabeçalho */
+        header {
+            background: #fffefe;
+            color: #6f8aec;
+            padding: 20px;
+            display: flex;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            justify-content: space-between;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Sombra na parte inferior */
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            font-family: 'Scribble', cursive;
+            align-items: left;
+            justify-content: left;
+        }
+        .nav{
+            background: #fffefe;
+            color: #6f8aec;
+            padding: 20px;
+            display: flex;
+            align-items: right;
+            justify-content: right;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown {
+          position: relative;
+          display: inline-block;
+      }
+
+      .dropbtn {
+    background-color: #ffffffa7;
+    color: rgb(0, 0, 0);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none; /* Remove a linha de link */
+    display: inline-block; /* Garante comportamento como botão */
+}
+
+.dropbtn:hover {
+    background-color: #6f8aec80;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 8px 15px;
+}
+
+      .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #ffffff;
+          border-radius: 5px;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 2; /* Garante que o texto fique acima da sombra */
+      }
+
+      .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+      }
+
+      .dropdown-content a:hover {
+          background-color: #f1f1f1;
+          border-radius: 5px;
+      }
+
+      .dropdown:hover .dropdown-content {
+          display: block;
+      }
+
+      .dropdown:hover .dropbtn {
+          background-color: #6f8aec80;
+          border-radius: 5px;
+          font-size: 1rem;
+          padding: 8px 15px;
+      }
+
+
+        /* Seção principal */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            gap: 20px;
+        }
+
+        .content {
+            max-width: 600px;
+        }
+
+        .content h2 {
+            font-size: 2rem;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .image-caption {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* Seção 3 */
+#secao3 {
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: #ffffff;
+    text-align: center;
+}
+
+#secao3 h5 {
+    font-size: 1.5rem;
+    color: #ecf0f1;
+    margin-bottom: 15px;
+    font-weight: 250px;
+    font-family: 'Scribble', cursive;
+}
+
+
+        /* Seção de Tarefas Favoritas */
+        #secaoProjetos {
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        #secaoProjetos h3 {
+            font-size: 4rem;
+            color: #333;
+        
+            font-family: 'Scribble', cursive;
+        }
+        #secaoProjetos hr {
+            border: none;
+            height: 5px;
+            background-color: #6f8aec;
+            width: 50%;
+            margin: auto;
+            margin-bottom: 100px;
+        }
+
+        .projeto-container {
+            display: flex;
+            justify-content: space-around;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .projeto {
+            background-color: #ffffff;
+            width: 600px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .projeto:hover {
+            transform: translateY(-10px);
+        }
+
+        .projeto video {
+            height: 300px;      /* Define uma altura maior */
+            border-radius: 8px; /* Mantém os cantos arredondados */
+            object-fit: cover;  /* Garante que a imagem se ajuste sem distorção */
+        }
+
+
+        .projeto h5 {
+            margin-top: 15px;
+            font-size: 1.5rem;
+            color: #333;
+            font-family: 'Scribble', cursive;
+        }
+
+        .projeto p {
+            font-size: 1rem;
+            color: #666;
+            margin-top: 10px;
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Matemática e suas Tecnologias</h1>
+    <!-- Menu de Navegação -->
+    <nav>
+        <div class="dropdown">
+            <a href="Integrada IOT - Site.html" class="dropbtn">Home</a>
+        </div>
+
+
+        <div class="dropdown">
+            <button class="dropbtn">Areas do Conhecimento</button><!-- a div dropbtn é somente do botão-->
+            <div class="dropdown-content"> <!-- a div dropdown-content é o texto-->
+              <a href="CN.html">CN</a>
+              <a href="CHS.html">CHS</a>
+              <a href="MAT.html">MAT</a>
+              <a href="LGG.html">LGG</a>
+              <a href="IOT.html">IOT</a>
+            </div>
+        </div>
+    </nav>
+
+    </header>
+
+    <!-- Seção principal -->
+    <div class="container">
+        <div class="content">
+            <h2>Calcular, analisar, solucionar</h2>
+            <hr>
+            <p>
+                Aqui, o raciocínio lógico e a precisão se unem para desvendar os 
+                padrões e as estruturas que governam o mundo. No campo da Matemática, 
+                você aprende a lidar com números, formas, e relações, desenvolvendo a capacidade 
+                de resolver problemas complexos e de encontrar soluções eficientes para desafios cotidianos. 
+            </p>
+        </div>
+        <div class="image-container">
+            <img src="image-MAT.png" alt="Imagem de esportes">
+        </div>
+    </div>
+
+    <!-- Carrossel -->
+    <section id="secaoProjetos">
+        <h3>Atividades Favoritas</h3>
+        <hr>
+        <div class="projeto-container">
+            <div class="projeto">
+                <video id="custom_video_play" width="400" controls="controls">>
+                    <source src="Drone nas Alturas.mp4" type="video/mp4"><source src="mov_bbb.flv" type="video/flv"> Browser Not Supporting
+                    </video>
+                <h5>APLICAÇÃO DE PONTO DE MÁXIMO/MÍNIMO</h5>
+                <p>Investigar pontos de máximo ou de mínimo de funções quadráticas em contextos envolvendo 
+                superfícies, Matemática Financeira ou Cinemática, entre outros, com apoio de tecnologias 
+                digitais.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+<section id="secao3">
+    <h5>"Já que vocês são bem bonzinhos, vou alterar o prazo da tarefa"</h5>
+</section>
+
+</body>
+</html>
